@@ -1,0 +1,18 @@
+{
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnSave": true,
+    "python.pythonPath": "./.venv/bin/python3.7",
+    "python.autoComplete.extraPaths": [
+        "./.venv/lib/python3.7",
+        "./.venv/lib/python3.7/site-packages"
+    ],
+    // flake 8
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "./.venv/bin/flake8",
+    "python.linting.flake8Args": [
+        "--exclude=*/*migrations/*",
+        "--ignore=E501"
+    ],
+    // pylint
+    "python.linting.pylintPath": "./.venv/bin/pylint"
+}
