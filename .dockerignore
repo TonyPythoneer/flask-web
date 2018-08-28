@@ -1,6 +1,7 @@
 # Git
 .gitignore
 .pre-commit-config.yaml
+.git
 
 # Python
 .venv
@@ -8,9 +9,11 @@
 # IDE
 .vscode
 
-# Project
-Makefile
-
 # Docker
 Dockerfile
 .docker-compose.yml
+
+# Project
+Makefile
+.services
+.docker-scripts

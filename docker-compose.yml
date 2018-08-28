@@ -3,12 +3,19 @@ version: "3"
 services:
   flask-web:
     build: ./
-    working_dir: /app
-    command: /bin/sh -c docker-scripts/build_flask.sh
+    command: /bin/sh -c .docker-scripts/build_flask.sh
     ports:
       - "5000:5000"
     volumes:
-      - "./.venv:/.venv"
+      - "./:/app"
+  mongodb:
+    image: mongo:3.6.6-jessie
+    command: mongod
+    volumes:
+      - "./.services/mongodb/data/db:/data/db"
+    ports:
+      - "27017:27017"
+
 
 networks:
   default:
