@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  flask-web:
+    build: ./
+    working_dir: /app
+    command: tail -f /dev/null
+    ports:
+      - "8888:8888"
+    volumes:
+      - "./:/app"
+      - "./.venv:/.venv"
+
+networks:
+  default:
+    driver: bridge
