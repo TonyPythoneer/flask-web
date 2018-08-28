@@ -1,0 +1,16 @@
+# Git
+.gitignore
+.pre-commit-config.yaml
+
+# Python
+.venv
+
+# IDE
+.vscode
+
+# Project
+Makefile
+
+# Docker
+Dockerfile
+.docker-compose.yml
