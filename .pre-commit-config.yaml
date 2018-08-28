@@ -1,0 +1,33 @@
+repos:
+-   repo: git://github.com/pre-commit/pre-commit-hooks
+    rev: v1.4.0
+    hooks:
+    -   id: trailing-whitespace
+        exclude: \.(js|html)$
+    -   id: flake8
+        language_version: python3.7
+        args:
+        - --exclude=*/*migrations/*
+        - --ignore=E501
+    -   id: check-byte-order-marker
+    -   id: requirements-txt-fixer
+        args:
+        - requirements.txt
+    -   id: check-ast
+        language_version: python3.7
+    -   id: autopep8-wrapper
+        language_version: python3.7
+        args:
+        - -i
+        - --ignore=E501
+    -   id: check-yaml
+    -   id: debug-statements
+        language_version: python3.7
+    -   id: end-of-file-fixer
+    -   id: fix-encoding-pragma
+-   repo: git://github.com/FalconSocial/pre-commit-python-sorter
+    rev: b57843b0b874df1d16eb0bef00b868792cb245c2
+    hooks:
+    -   id: python-import-sorter
+        args:
+        - --silent-overwrite
