@@ -1,0 +1,20 @@
+<h1>Home</h1>
+
+{% with messages = get_flashed_messages() %} {% if messages %}
+<ul class=flashes>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %} {% endwith %}
+
+<div>Hi {% if username %}{{ username }}{% else %}Anonymous User{% endif %}</div>
+<br>
+<div>
+    {% if username %}
+    <div><a href="{{ url_for('auth.logout') }}">logut</a></div>
+    {% else %}
+    <div><a href="{{ url_for('auth.signup') }}">signup</a></div>
+    <div><a href="{{ url_for('auth.login') }}">login</a></div>
+    {% endif %}
+</div>
