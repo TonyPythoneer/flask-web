@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  flask-web:
+    command: /bin/sh -c .docker-scripts/run_prod_flask.sh
+    expose:
+      - "8001"
+  nginx:
+    image: nginx:1.14
+    volumes:
+      - ./nginx/flask-web-nginx.conf:/etc/nginx/conf.d/flask-web-nginx.conf
+    links:
+      - flask-web
+    ports:
+      - "8000:8000"

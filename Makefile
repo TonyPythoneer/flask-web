@@ -1,7 +1,14 @@
-.PHONY: venv
-venv:
-	apt install -y python3-pip python3-apt python3-setuptools; \
-	python3.7 -m venv ./.venv
+# docker
+
+.PHONY: up
+up:
+	docker-compose up
+
+.PHONY: up_prod
+up_prod:
+	docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
+
+# precommit
 
 .PHONY: install_precommit
 install_precommit:
