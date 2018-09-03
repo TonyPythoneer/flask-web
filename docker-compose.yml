@@ -2,10 +2,12 @@ version: "3"
 
 services:
   flask-web:
-    build: ./
+    build: ./flask-web
     command: /bin/sh -c .docker-scripts/build_flask.sh
     ports:
       - "5000:5000"
+    expose:
+      - "8001"
     volumes:
       - "./flask-web:/app"
   mongodb:
@@ -15,7 +17,15 @@ services:
       - "./.services/mongodb/data/db:/data/db"
     ports:
       - "27017:27017"
+  nginx:
+    image: nginx:1.14
+    volumes:
+      - ./nginx/flask-web-nginx.conf:/etc/nginx/conf.d/flask-web-nginx.conf
 
+    links:
+      - flask-web
+    ports:
+      - "8000:8000"
 
 networks:
   default:

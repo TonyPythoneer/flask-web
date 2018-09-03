@@ -1,7 +1,5 @@
 # Git
 .gitignore
-.pre-commit-config.yaml
-.git
 
 # Python
 .venv
@@ -13,7 +11,5 @@
 Dockerfile
 .docker-compose.yml
 
-# Project
-Makefile
-.services
+# Service
 .docker-scripts
