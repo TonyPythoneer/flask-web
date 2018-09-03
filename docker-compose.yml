@@ -7,7 +7,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - "./:/app"
+      - "./flask-web:/app"
   mongodb:
     image: mongo:3.6.6-jessie
     command: mongod
